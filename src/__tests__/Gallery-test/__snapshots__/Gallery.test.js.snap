@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gallery is rendering atches snapshot 1`] = `
+<DocumentFragment>
+  <section>
+    <h1
+      data-testid="h1tag"
+    >
+      Portrait
+    </h1>
+    <p>
+      Portrait of people in my life
+    </p>
+    <div>
+      <div
+        class="flex-row"
+      />
+    </div>
+  </section>
+</DocumentFragment>
+`;
