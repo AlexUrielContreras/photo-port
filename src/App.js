@@ -7,6 +7,8 @@ import Contact from './components/Contact';
 
 function App() {
 
+  const [contactSelected, setContactSelected] = useState(false)
+
   const [categories] = useState([
     {
         name: 'commercial',
@@ -25,15 +27,26 @@ function App() {
         description: 'Fields, farmhouses, waterfalls, nad the beauty of nature'
     }
 ]);
-const [currentCategory, setCurrentCategory] = useState(categories[0])
+
+const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
   return (
     <div>
-      <Nav categories={categories} currentCategory={currentCategory} setCurrentCategory={setCurrentCategory}/>
+      <Nav 
+        categories={categories} 
+        currentCategory={currentCategory} 
+        setCurrentCategory={setCurrentCategory}
+        contactSelected={contactSelected}
+        setContactSelected={setContactSelected}/>
       <main>
-        <Contact />
-        <Gallery currentCategory={currentCategory}/>
-        <About />
+        {!contactSelected ? (
+          <>
+            <Gallery currentCategory={currentCategory}/>
+            <About />
+          </>
+        ) : (
+          <Contact />
+        )}
       </main>
     </div>
   );
